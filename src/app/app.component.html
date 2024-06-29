@@ -3,38 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>q
 
 </head>
 <body>
+
 <h1 class=" mx-auto  w-8/12 bg-white font-bold min-h-screen">
   <div class="container p-2  text-white text-1xl mx-auto bg-emerald-600 rounded overflow-x-hidden shadow-lg	">
     Add Designation
   </div>
   <form [formGroup]="regFrom" (ngSubmit)="registation()">
   <div class="mt-4 mx-2">
-    <h3 class="text-1xl m font-semibold ">Employee Type<span style="color:red;">*</span></h3>
-    <div class="flex justify-center mt-2">
-      <select formControlName="employee" name="Select title" class="w-full text-gray-400  border border-gray-400">
-        <option  value="Select title"></option>
-        <option value="Temporary">Temporary</option>
-        <option value="Provisional">Provisional</option>
-        <option value="Improvised">Improvised</option>
-        <option value="Permanent">Permanent</option>
-      </select>
+
+      <div class="">
+        <mat-label class="pb-4" > Employ Type <span style="color:red;">*</span> </mat-label>
+        <mat-form-field appearance="outline" class="w-full" >
+          <mat-select formControlName="employee" name="Select title">
+            <mat-option value="Temporary"> Temporary</mat-option>
+            <mat-option value="Parmanent">Parmanent </mat-option>
+            <mat-option value="Part-time">Part-time </mat-option>
+          </mat-select>
+        </mat-form-field>
     </div>
   </div>
 
     <div class="mt-4 mx-2">
-      <h3 class="text-1xl m font-semibold ">Designation<span style="color:red;">*</span></h3>
-      <div class="flex justify-center mt-2">
-        <select formControlName="degisnation"  name="Select title" class="w-full text-gray-400  border border-gray-400">
-          <option  value="Select title"></option>
-          <option value="Lab Assistant,Dept of cse">Lab Assistant,Dept of cse</option>
-          <option value="Lacturer,Dept of cse">Lacturer,Dept of cse</option>
-          <option value="Professor,Dept of cse">Professor,Dept of cse</option>
-          <option value="Associate professor,Dept of cse">Associate professor,Dept of cse</option>
-        </select>
+      <div class="">
+
+          <mat-label > Degisnation <span style="color:red;">*</span> </mat-label>
+          <mat-form-field appearance="outline" class="w-full" >
+            <mat-select formControlName="degisnation" name="Select title">
+              <mat-option value="Professor"> Professor</mat-option>
+              <mat-option value="Lecturer"> Lecturer</mat-option>
+              <mat-option value="Assistant Lecturer"> Assistant Lecturer</mat-option>
+            </mat-select>
+          </mat-form-field>
+
       </div>
     </div>
 
@@ -42,75 +45,74 @@
 
       <div class="grid grid-cols-2 mx-2 mt-4 gap-5 ">
         <div>
-          <label  class="text-1xl m font-semibold ">Start date<span style="color:red;">*</span></label>
+          <label  class="text-1xl  ">Start date<span style="color:red;">*</span></label>
           <input formControlName="start_date"  class=" w-full border border-gray-400 mt-2 " type="date" placeholder="Not set">
         </div>
 
         <div>
-          <label  class="text-1xl m font-semibold ">End date</label>
+          <label  class="text-1xl  ">End date</label>
           <input formControlName="end_date"  class=" w-full  border border-gray-400 mt-2 " type="date" placeholder="None">
         </div>
         </div>
 
     <div class="grid grid-cols-2 mx-2 mt-4 gap-5 ">
       <div>
-        <label  class="text-1xl m font-semibold ">Primary Designation<span style="color:red;">*</span></label>
-       <div class="flex  border border-gray-400 mt-2 ">
-         <input formControlName=" primary_degisnation" class=" text-gray-400 border border-gray-400 mx-2 " type="radio">
-         <label class="font-semibold">Yes</label><br>
-        <input  formControlName=" primary_degisnation" class=" text-gray-400 border border-gray-400 mx-4  " type="radio">
-    <label class="font-semibold">No</label><br>
+        <label  class="text-1xl ">Primary Designation<span style="color:red;">*</span></label>
+       <div class="flex  border border-gray-400 ">
+         <mat-radio-group formControlName="primary_degisnation" appearance="outline" class="w-full" >
+           <mat-radio-button> Yes </mat-radio-button>
+           <mat-radio-button> No </mat-radio-button>
+         </mat-radio-group>
 
        </div>
        </div>
       <div class="">
-        <h3 class="text-1xl m font-semibold ">Special Position</h3>
-        <div class="flex justify-center mt-2">
-          <select formControlName="special_position" name="Select title" class="w-full text-gray-400  border border-gray-400">
-            <option  value="Select title"></option>
-            <option value="Vice chancelor">Vice chancelor</option>
-            <option value="Co-vice chancelor">Co-vice chancelor</option>
-            <option value="Register">Register</option>
-            <option value="BOT member ">BOT member </option>
-          </select>
-        </div>
+
+          <mat-label > Speacial position </mat-label>
+          <mat-form-field appearance="outline" class="w-full" >
+            <mat-select formControlName="special_position" name="Select title">
+              <mat-option value="Coordinatorr"> Coordinator</mat-option>
+              <mat-option value="Assistant Coordinato "> Assistant Coordinator</mat-option>
+              <mat-option value="Register"> Register</mat-option>
+            </mat-select>
+          </mat-form-field>
+
       </div>
 
     </div>
-
-
-
     <div class="grid grid-cols-2 mx-2 mt-4 gap-5 ">
       <div>
-        <label  class="text-1xl m font-semibold ">Room Number<span style="color:red;">*</span></label>
-        <div class="flex  border border-gray-400 mt-2 ">
-          <input formControlName="room_number" class=" w-full " type="text">
+        <label  class="text-1xl m  w-full ">Room Number<span style="color:red;">*</span></label>
+        <div class="flex w-full">
+
+          <mat-form-field  appearance="outline" class="w-full" >
+            <input formControlName="room_number" matInput >
+          </mat-form-field>
+
 
         </div>
       </div>
       <div class="">
-        <h3 class="text-1xl m font-semibold ">Seating zone</h3>
-        <div class="flex justify-center mt-2">
-          <select formControlName="seating_zone" name="Select title" class="w-full text-gray-400  border border-gray-400">
-            <option  value="Select title"></option>
-            <option value="200">200</option>
-            <option value="201">201</option>
-            <option value="202">202</option>
-            <option value="203">203</option>
-          </select>
-        </div>
+
+          <mat-label > Seating  Zone </mat-label>
+          <mat-form-field appearance="outline" class="w-full" >
+              <mat-select formControlName="seating_zone" name="Select title">
+                <mat-option value="2001"> 2001</mat-option>
+                <mat-option value="2002"> 2002</mat-option>
+                <mat-option value="2003"> 2003</mat-option>
+              </mat-select>
+            </mat-form-field>
+
       </div>
 
     </div>
 
-    <div class="flex justify-end">
-      <button color="accent" mat-raised-button>Submit</button>
-    </div>
-    <div>
-      <mat-button-toggle #toggleBtn checked> rabby  </mat-button-toggle>
+    <div class="flex justify-end mt-4">
+      <button color="primary"  mat-raised-button>Submit</button>
     </div>
 
   </form>
 </h1>
+
 </body>
 </html>
